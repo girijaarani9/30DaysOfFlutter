@@ -29,6 +29,7 @@ class LogInPage extends StatelessWidget {
                       hintText: "Enter UserName", labelText: "UserName"),
                 ),
                 TextFormField(
+                    obscureText: true,
                     decoration: InputDecoration(
                         hintText: "Enter Password", labelText: "Password")),
               ],
