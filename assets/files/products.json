@@ -1,0 +1,32 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Iphone 11",
+            "desc": "Apple Iphone 11",
+            "price": 999,
+            "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone11-white-select-2019?wid=940&hei=1112&fmt=png-alpha&.v=1566956148115"
+        },
+        {
+            "id": 2,
+            "name": "Iphone 12 pro",
+            "desc": "Apple Iphone 12 pro",
+            "price": 1299,
+            "image": "https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1605271851/Croma%20Assets/Communication/Mobiles/Images/8999510245406.png/mxw_2048,f_auto"
+        },
+        {
+            "id": 3,
+            "name": "Iphone 12 pro max",
+            "desc": "Apple Iphone 12 pro max",
+            "price": 2299,
+            "image": "https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1605271851/Croma%20Assets/Communication/Mobiles/Images/8999510245406.png/mxw_2048,f_auto"
+        },
+        {
+            "id": 4,
+            "name": "Iphone 13",
+            "desc": "Apple Iphone 13",
+            "price": 2009,
+            "image": "https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1631776918/Croma%20Assets/Communication/Mobiles/Images/243468_a91zhe.png/mxw_2048,f_auto"
+        }
+    ]
+}
