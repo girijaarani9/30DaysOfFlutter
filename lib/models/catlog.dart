@@ -1,5 +1,17 @@
 import 'package:flutter/cupertino.dart';
 
+class CatlogModel {
+  static final items = [
+    Item(
+        id: "1",
+        name: "Iphone11",
+        desc: "Apple Iphone 11",
+        price: 999,
+        imageUrl:
+            "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone11-white-select-2019?wid=940&hei=1112&fmt=png-alpha&.v=1566956148115")
+  ];
+}
+
 class Item {
   final String id;
   final String name;
@@ -14,13 +26,3 @@ class Item {
       required this.price,
       required this.imageUrl});
 }
-
-final products = [
-  Item(
-      id: "1",
-      name: "Iphone11",
-      desc: "Apple Iphone 11",
-      price: 999,
-      imageUrl:
-          "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone11-white-select-2019?wid=940&hei=1112&fmt=png-alpha&.v=1566956148115")
-];

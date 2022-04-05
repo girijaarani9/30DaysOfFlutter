@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_days/models/catlog.dart';
+import 'package:flutter_days/widgets/item_Widget.dart';
 
 import '../widgets/drawer.dart';
 
@@ -11,13 +13,14 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Catlog App'),
       ),
-      body: (Material(
-        child: Center(
-          child: Container(
-            child: Text("30 days of flutter!"),
-          ),
-        ),
-      )),
+      body: ListView.builder(
+        itemCount: CatlogModel.items.length,
+        itemBuilder: (Context, int index) {
+          return ItemWidget(
+            item: CatlogModel.items[index],
+          );
+        },
+      ),
       drawer: MyDrawer(),
     );
   }
