@@ -1,19 +1,9 @@
-import 'package:flutter/cupertino.dart';
-
 class CatlogModel {
-  static final items = [
-    Item(
-        id: "1",
-        name: "Iphone11",
-        desc: "Apple Iphone 11",
-        price: 999,
-        imageUrl:
-            "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone11-white-select-2019?wid=940&hei=1112&fmt=png-alpha&.v=1566956148115")
-  ];
+  static List<Item> items = [];
 }
 
 class Item {
-  final String id;
+  final int id;
   final String name;
   final String desc;
   final num price;
@@ -25,4 +15,15 @@ class Item {
       required this.desc,
       required this.price,
       required this.imageUrl});
+
+  factory Item.fromMap(Map<String, dynamic> map) {
+    return Item(
+        id: map["id"],
+        name: map["name"],
+        price: map["price"],
+        desc: map["desc"],
+        imageUrl: map["image"]);
+  }
+  toMap() =>
+      {"id": id, "name": name, "price": price, "desc": desc, "image": imageUrl};
 }

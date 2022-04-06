@@ -17,15 +17,20 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     loadData();
   }
 
   loadData() async {
-    var catlogJson = await rootBundle.loadString("assets/files/products.json");
-    var decodedData = jsonDecode(catlogJson);
+    final catlogJson =
+        await rootBundle.loadString('assets/files/products.json');
+    final decodedData = jsonDecode(catlogJson);
     var productsData = decodedData["products"];
+
+    CatlogModel.items = List.from(productsData)
+        .map<Item>((item) => Item.fromMap(item))
+        .toList();
+    setState(() {});
   }
 
   @override
@@ -34,14 +39,18 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text('Catlog App'),
       ),
-      body: ListView.builder(
-        itemCount: CatlogModel.items.length,
-        itemBuilder: (Context, int index) {
-          return ItemWidget(
-            item: CatlogModel.items[index],
-          );
-        },
-      ),
+      body: (CatlogModel.items != null && CatlogModel.items.isNotEmpty)
+          ? ListView.builder(
+              itemCount: CatlogModel.items.length,
+              itemBuilder: (BuildContext context, int index) {
+                return ItemWidget(
+                  item: CatlogModel.items[index],
+                );
+              },
+            )
+          : Center(
+              child: CircularProgressIndicator(),
+            ),
       drawer: MyDrawer(),
     );
   }
