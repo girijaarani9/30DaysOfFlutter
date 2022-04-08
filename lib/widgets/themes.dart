@@ -10,4 +10,9 @@ class MyTheme {
           titleTextStyle: Theme.of(context).textTheme.bodyText1));
   static ThemeData DarkTheme(BuildContext context) =>
       ThemeData(brightness: Brightness.dark);
+
+  static Color cream = Color(0xfff5f5f5);
+  static Color blue = Colors.deepPurple;
+  static Color grey = Colors.blueGrey;
+  static Color black = Colors.black;
 }
