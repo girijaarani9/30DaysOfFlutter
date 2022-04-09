@@ -1,9 +1,11 @@
 // ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors
 
 import 'dart:convert';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_days/models/catlog.dart';
+import 'package:flutter_days/utils/MyRoutes.dart';
 import 'package:flutter_days/widgets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
 import '../widgets/drawer.dart';
@@ -39,6 +41,11 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        floatingActionButton: FloatingActionButton(
+          backgroundColor: MyTheme.black,
+          onPressed: () => Navigator.pushNamed(context, MyRoutes.cart),
+          child: Icon(CupertinoIcons.cart),
+        ),
         backgroundColor: MyTheme.cream,
         body: SafeArea(
           child: Container(
