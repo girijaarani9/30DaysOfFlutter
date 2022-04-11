@@ -49,22 +49,27 @@ class CatlogItem extends StatelessWidget {
             child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            catalog.name.text.xl.color(MyTheme.black).make(),
+            catalog.name.text.xl.color(context.accentColor).make(),
             catalog.desc.text.color(MyTheme.grey).make(),
             ButtonBar(
               alignment: MainAxisAlignment.spaceBetween,
               children: [
                 //  crossAxisAlignment: CrossAxisAlignment.end,
 
-                "\$${catalog.price}".text.bold.xl.color(MyTheme.blue).make(),
+                "\$${catalog.price}"
+                    .text
+                    .bold
+                    .xl
+                    .color(context.theme.accentColor)
+                    .make(),
                 Container(
                     width: 60,
                     height: 30,
                     child: ElevatedButton(
                       onPressed: () {},
                       style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(MyTheme.blue),
+                          backgroundColor: MaterialStateProperty.all(
+                              context.theme.focusColor),
                           shape: MaterialStateProperty.all(StadiumBorder())),
                       child: Text("Buy"),
                     )),
@@ -73,6 +78,6 @@ class CatlogItem extends StatelessWidget {
           ],
         ))
       ],
-    )).white.square(100).roundedLg.make().py16();
+    )).color(context.theme.cardColor).square(100).roundedLg.make().py16();
   }
 }

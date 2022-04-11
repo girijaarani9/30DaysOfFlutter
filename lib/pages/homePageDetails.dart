@@ -10,7 +10,7 @@ class HomePageDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: MyTheme.cream,
+      backgroundColor: context.canvasColor,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
       ),
@@ -24,12 +24,12 @@ class HomePageDetail extends StatelessWidget {
                 child: Image.network(catalog.imageUrl)),
             Expanded(
                 child: VxArc(
-              arcType: VxArcType.CONVEX,
+              arcType: VxArcType.CONVEY,
               edge: VxEdge.TOP,
               height: 30,
               child: Container(
                 padding: EdgeInsets.only(top: 40),
-                color: Colors.white,
+                color: context.theme.cardColor,
                 child: Column(
                   children: [
                     Hero(
@@ -59,7 +59,7 @@ class HomePageDetail extends StatelessWidget {
                             .text
                             .bold
                             .xl4
-                            .color(MyTheme.blue)
+                            .color(context.theme.accentColor)
                             .make(),
                         Container(
                             width: 100,
@@ -67,8 +67,8 @@ class HomePageDetail extends StatelessWidget {
                             child: ElevatedButton(
                               onPressed: () {},
                               style: ButtonStyle(
-                                  backgroundColor:
-                                      MaterialStateProperty.all(MyTheme.black),
+                                  backgroundColor: MaterialStateProperty.all(
+                                      context.theme.focusColor),
                                   shape: MaterialStateProperty.all(
                                       StadiumBorder())),
                               child: Text("Buy"),

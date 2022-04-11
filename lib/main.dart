@@ -18,14 +18,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: const HomePage(),
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.dark,
       theme: MyTheme.lightTheme(context),
 
       //  fontFamily: GoogleFonts.lato().fontFamily),
       //primaryTextTheme: GoogleFonts.latoTextTheme()),
 
       darkTheme: MyTheme.DarkTheme(context),
-      initialRoute: MyRoutes.home,
+      initialRoute: MyRoutes.logIn,
       routes: {
         MyRoutes.home: (context) => HomePage(),
         MyRoutes.logIn: (context) => LogInPage(),

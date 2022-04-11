@@ -12,8 +12,8 @@ class CatlogHeader extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        "Catlog App".text.xl5.color(MyTheme.blue).bold.make(),
-        "Trending Products".text.xl2.color(MyTheme.grey).make()
+        "Catlog App".text.xl5.color(context.theme.focusColor).bold.make(),
+        "Trending Products".text.xl2.gray500.make()
       ],
     );
   }
