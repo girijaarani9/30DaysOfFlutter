@@ -1,10 +1,10 @@
 class CatlogModel {
   static List<Item> items = [];
 
-  static Item getById(int id) =>
+  Item getById(int id) =>
       items.firstWhere((element) => element.id == id, orElse: null);
 
-  static Item getByPos(int pos) => items[pos];
+  Item getByPos(int pos) => items[pos];
 }
 
 class Item {
