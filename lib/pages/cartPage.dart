@@ -19,6 +19,52 @@ class CartPage extends StatelessWidget {
               color: context.theme.accentColor),
         ),
       ),
+      body:
+          Column(children: [CartList().p32().expand(), Divider(), cartTotal()]),
+    );
+  }
+}
+
+class cartTotal extends StatelessWidget {
+  const cartTotal({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+        height: 200,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Text(
+              "\$9999",
+              style: TextStyle(fontSize: 30),
+            ),
+            ElevatedButton(onPressed: () {}, child: Text("Buy"))
+          ],
+        ));
+  }
+}
+
+class CartList extends StatefulWidget {
+  const CartList({Key? key}) : super(key: key);
+
+  @override
+  State<CartList> createState() => _CartListState();
+}
+
+class _CartListState extends State<CartList> {
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      itemCount: 5,
+      itemBuilder: (context, index) {
+        return ListTile(
+          leading: Icon(Icons.done),
+          trailing: IconButton(
+              onPressed: () {}, icon: Icon(Icons.remove_circle_outline)),
+          title: Text("Items"),
+        );
+      },
     );
   }
 }
