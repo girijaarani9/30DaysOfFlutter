@@ -71,7 +71,11 @@ class _CartListState extends State<CartList> {
         return ListTile(
           leading: Icon(Icons.done),
           trailing: IconButton(
-              onPressed: () {}, icon: Icon(Icons.remove_circle_outline)),
+              onPressed: () {
+                _cart.remove(_cart.items[index]);
+                setState(() {});
+              },
+              icon: Icon(Icons.remove_circle_outline)),
           title: Text(_cart.items[index].name),
         );
       },
