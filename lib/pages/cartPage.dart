@@ -39,7 +39,13 @@ class cartTotal extends StatelessWidget {
               "\$9999",
               style: TextStyle(fontSize: 30),
             ),
-            ElevatedButton(onPressed: () {}, child: Text("Buy"))
+            ElevatedButton(
+                onPressed: () {
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                    content: Text("Buying is not supported yet"),
+                  ));
+                },
+                child: Text("Buy"))
           ],
         ));
   }
