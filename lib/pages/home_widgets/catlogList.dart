@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_days/models/cart.dart';
 import 'package:flutter_days/pages/homePageDetails.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -62,22 +63,45 @@ class CatlogItem extends StatelessWidget {
                     .xl
                     .color(context.theme.accentColor)
                     .make(),
-                Container(
-                    width: 60,
-                    height: 30,
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all(
-                              context.theme.focusColor),
-                          shape: MaterialStateProperty.all(StadiumBorder())),
-                      child: Text("Buy"),
-                    )),
+                AddToCart(catalog: catalog),
               ],
             )
           ],
         ))
       ],
     )).color(context.theme.cardColor).square(100).roundedLg.make().py16();
+  }
+}
+
+class AddToCart extends StatefulWidget {
+  final Item catalog;
+  const AddToCart({Key? key, required this.catalog}) : super(key: key);
+
+  @override
+  State<AddToCart> createState() => _AddToCartState();
+}
+
+class _AddToCartState extends State<AddToCart> {
+  @override
+  bool isAdded = false;
+  Widget build(BuildContext context) {
+    return Container(
+        width: 60,
+        height: 30,
+        child: ElevatedButton(
+          onPressed: () {
+            final _catalog = CatlogModel();
+            final _cart = CartModel();
+            _cart.catlog = _catalog;
+            _cart.add(widget.catalog);
+            isAdded = isAdded.toggle();
+            setState(() {});
+          },
+          style: ButtonStyle(
+              backgroundColor:
+                  MaterialStateProperty.all(context.theme.focusColor),
+              shape: MaterialStateProperty.all(StadiumBorder())),
+          child: isAdded ? Icon(Icons.done) : Text("Add"),
+        ));
   }
 }
