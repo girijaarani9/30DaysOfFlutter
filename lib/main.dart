@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_days/core/store.dart';
 import 'package:flutter_days/pages/cartPage.dart';
 import 'package:flutter_days/utils/MyRoutes.dart';
 import 'package:flutter_days/widgets/themes.dart';
 import 'pages/homePage.dart';
 import 'pages/login_Page.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 //import 'package:google_fonts/google_fonts.dart';
 //Learnt abour trees, constraints, build context.
 void main() {
-  runApp(MyApp());
+  runApp(VxState(store: MyStore(), child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
